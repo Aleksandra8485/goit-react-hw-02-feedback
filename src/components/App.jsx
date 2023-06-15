@@ -32,7 +32,7 @@ const App = () => {
 
   return (
     <div className={styles.feedbackContainer}>
-      <Section title="Please leave Feedback">
+      <Section title="Please leave your feedback">
         <FeedbackOptions
           options={['good', 'neutral', 'bad']}
           onLeaveFeedback={handleButtonClick}
