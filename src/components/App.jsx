@@ -29,19 +29,17 @@ const App = () => {
     return totalFeedback > 0 ? Math.round((good / totalFeedback) * 100) : 0;
   };
 
-  const feedbackGiven = countTotalFeedback() > 0;
-
   return (
     <div>
-      <Section title="Provide Feedback">
+      <Section title="Please leave Feedback">
         <FeedbackOptions
           options={['good', 'neutral', 'bad']}
           onLeaveFeedback={handleButtonClick}
         />
       </Section>
 
-      {feedbackGiven ? (
-        <Section title="Statistics">
+      <Section title="Statistics">
+        {countTotalFeedback() > 0 ? (
           <Statistics
             good={state.good}
             neutral={state.neutral}
@@ -49,12 +47,10 @@ const App = () => {
             total={countTotalFeedback()}
             positivePercentage={countPositiveFeedbackPercentage()}
           />
-        </Section>
-      ) : (
-        <Section title="Statistics">
+        ) : (
           <Notification message="There is no feedback" />
-        </Section>
-      )}
+        )}
+      </Section>
     </div>
   );
 };
