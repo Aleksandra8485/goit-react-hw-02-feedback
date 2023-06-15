@@ -3,6 +3,7 @@ import Section from './Feedback/Section';
 import Statistics from './Feedback/Statistics';
 import FeedbackOptions from './Feedback/FeedbackOptions';
 import Notification from './Feedback/Notification';
+import styles from './Feedback/Feedback.module.css';
 
 const App = () => {
   const [state, setState] = useState({
@@ -30,7 +31,7 @@ const App = () => {
   };
 
   return (
-    <div>
+    <div className={styles.feedbackContainer}>
       <Section title="Please leave Feedback">
         <FeedbackOptions
           options={['good', 'neutral', 'bad']}
